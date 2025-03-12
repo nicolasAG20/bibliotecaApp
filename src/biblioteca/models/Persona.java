@@ -10,4 +10,17 @@ package biblioteca.models;
  */
 public class Persona {
     
+    private String nombre; 
+    
+    private String DocumentoDeIdentidad; 
+    
+    private String correoElectronico; 
+
+    public Persona(String nombre, String DocumentoDeIdentidad, String correoElectronico) {
+        this.nombre = nombre;
+        this.DocumentoDeIdentidad = DocumentoDeIdentidad;
+        this.correoElectronico = correoElectronico;
+    }
+    
+    
 }
