@@ -18,8 +18,8 @@ public class Autor extends Persona {
     /*
      
     */
-
-    public Autor(String editorial, String profesion) {
+    public Autor(String nombre, String documentoDeIdentidad, String correoElectronico, String editorial, String profesion){
+        super (nombre, documentoDeIdentidad, correoElectronico);
         this.editorial = editorial;
         this.profesion = profesion;
     }

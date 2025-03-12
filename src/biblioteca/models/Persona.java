@@ -12,13 +12,13 @@ public class Persona {
     
     private String nombre; 
     
-    private String DocumentoDeIdentidad; 
+    private String documentoDeIdentidad; 
     
     private String correoElectronico; 
 
     public Persona(String nombre, String DocumentoDeIdentidad, String correoElectronico) {
         this.nombre = nombre;
-        this.DocumentoDeIdentidad = DocumentoDeIdentidad;
+        this.documentoDeIdentidad = DocumentoDeIdentidad;
         this.correoElectronico = correoElectronico;
     }
     
