@@ -8,7 +8,7 @@ package biblioteca.models;
  *
  * @author Nicolas Agudelo
  */
-public class Persona {
+public abstract class Persona {
     
     private String nombre; 
     
