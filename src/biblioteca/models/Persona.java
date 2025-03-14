@@ -10,13 +10,13 @@ package biblioteca.models;
  * @since 20250312
  * @version 1.0
  */
-public class Persona {
+    
+public abstract class Persona {
     //Atributos
     /**
     * Nombre de la persona
     */
     private String nombre; 
-    
     /**
     * Documento de identidad de la persona
     */
