@@ -10,14 +10,30 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Modelo que representa la ventana de BuscarLibro
  * @author Camila
+ * @since 20250312
+ * @version 1.0
  */
 public class BuscarLibro extends javax.swing.JDialog {
-
+    //Atributos 
+    /**
+    * Instancia de Biblioteca
+    */
     private Biblioteca biblioteca;
+    /**
+    * Instancia de VentanaPrincipal
+    */
     private VentanaPrincipal ventana;
     
+    /**
+     * Inicializa los atributos de la clase BuscarLibro
+     *
+     * @param     parent
+     * @param     modal
+     * @param     biblioteca
+     * @param     ventana
+    */
     public BuscarLibro(java.awt.Frame parent, boolean modal, Biblioteca biblioteca, VentanaPrincipal ventana) {
         super(parent, modal);
         initComponents();
@@ -172,14 +188,14 @@ public class BuscarLibro extends javax.swing.JDialog {
         textBuscar1.setText("Buscar");
 
         txtIdLibro.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        txtIdLibro.setText("Ingrese el id del libro que desea buscar: ");
+        txtIdLibro.setText(".");
 
         txtTituloLibro.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        txtTituloLibro.setText("Ingrese el id del libro que desea buscar: ");
+        txtTituloLibro.setText(".");
 
-        iconoLibro.setText("jLabel1");
+        iconoLibro.setText(".");
 
-        iconoLibro2.setText("jLabel1");
+        iconoLibro2.setText(".");
 
         javax.swing.GroupLayout panelContenidoLayout = new javax.swing.GroupLayout(panelContenido);
         panelContenido.setLayout(panelContenidoLayout);
@@ -269,6 +285,10 @@ public class BuscarLibro extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Evento del boton buscarLibro al hacer click
+     * @param     evt
+    */
     private void btnBuscarLibroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarLibroMouseClicked
         try{
             long idLibro = Long.parseLong(this.txtIdLibroBuscar.getText());
@@ -300,7 +320,7 @@ public class BuscarLibro extends javax.swing.JDialog {
     }//GEN-LAST:event_btnBuscarLibroMouseExited
 
     private void txtIdLibroBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdLibroBuscarActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtIdLibroBuscarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

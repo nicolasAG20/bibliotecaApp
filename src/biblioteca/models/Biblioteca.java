@@ -18,21 +18,20 @@ public class Biblioteca {
     * Arreglo que almacena los libros
     */
     ArrayList<Libro> libros = new ArrayList<Libro>(); 
-       
+    
     /**
-     * Muestra los libros existentes en la bilioteca
-     * @return arreglo de libros
+     * Retorna el arreglo de libros
+     * @return libros
     */
-    
-    
     public ArrayList<Libro> getLibros(){
         return libros;
     }
 
+    /**
+     * Muestra los libros existentes en la bilioteca
+     * @return arreglo de libros
+    */
     public ArrayList<Libro> mostrarLibros() {
-        /*for(int i=0 ; i< this.libros.size() ; i++){
-        System.out.println(this.libros.get(i).getTitulo());
-        }*/
         return this.libros;
     }
     
@@ -63,6 +62,7 @@ public class Biblioteca {
      * Actualiza la informacion de un libro
      * @param idBuscar
      * @param libroActualizado
+     * @return boolean
     */
     public boolean actualizarLibro(long idBuscar, Libro libroActualizado){
         for(int i=0 ; i< this.libros.size() ; i++){
@@ -77,6 +77,7 @@ public class Biblioteca {
     /**
      * Elimina un libro del arreglo
      * @param idBuscar
+     * @return boolean
     */
     public boolean eliminarLibro(long idBuscar){
         for(int i=0 ; i< this.libros.size() ; i++){
@@ -89,7 +90,7 @@ public class Biblioteca {
     }
     
     /**
-     * Elimina un libro del arreglo
+     * Ordena los libros alfabeticamente
      * @return librosOrdenados
     */
     public ArrayList<Libro> obtenerLibrosAlfabeticamente(){

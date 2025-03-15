@@ -327,7 +327,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="2"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Ingrese el id del libro que desea buscar: "/>
+                <Property name="text" type="java.lang.String" value="."/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="txtTituloLibro">
@@ -335,17 +335,17 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="2"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Ingrese el id del libro que desea buscar: "/>
+                <Property name="text" type="java.lang.String" value="."/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="iconoLibro">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jLabel1"/>
+                <Property name="text" type="java.lang.String" value="."/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="iconoLibro2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jLabel1"/>
+                <Property name="text" type="java.lang.String" value="."/>
               </Properties>
             </Component>
           </SubComponents>

@@ -8,14 +8,30 @@ import biblioteca.models.Biblioteca;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Modelo que representa la ventana de EliminarLibro
  * @author Camila
+ * @since 20250312
+ * @version 1.0
  */
 public class EliminarLibro extends javax.swing.JDialog {
-    
+    //Atributos 
+    /**
+    * Instancia de Biblioteca
+    */
     private Biblioteca biblioteca;
+    /**
+    * Instancia de VentanaPrincipal
+    */
     private VentanaPrincipal ventana;
     
+    /**
+     * Inicializa los atributos de la clase EliminarLibro
+     *
+     * @param     parent
+     * @param     modal
+     * @param     biblioteca
+     * @param     ventana
+    */
     public EliminarLibro(java.awt.Frame parent, boolean modal,Biblioteca biblioteca, VentanaPrincipal ventana) {
         super(parent, modal);
         initComponents();
@@ -207,6 +223,11 @@ public class EliminarLibro extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Evento del boton eliminarLibro al hacer click
+     *
+     * @param     evt
+    */
     private void btnEliminarLibroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminarLibroMouseClicked
         try{
             long idLibro = Long.parseLong(this.txtIdLibroEliminar.getText());

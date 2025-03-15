@@ -9,14 +9,31 @@ import biblioteca.models.Libro;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Modelo que representa la ventana de actualizar libro
  * @author Camila
+ * @since 20250312
+ * @version 1.0
  */
-public class ActualizarLibro extends javax.swing.JDialog {
 
+public class ActualizarLibro extends javax.swing.JDialog {
+    //Atributos 
+    /**
+    * Instancia de Biblioteca
+    */
     private Biblioteca biblioteca;
+    /**
+    * Instancia de VentanaPrincipal
+    */
     private VentanaPrincipal ventana;
     
+    /**
+     * Inicializa los atributos de la clase ActualizarLibro
+     *
+     * @param     parent
+     * @param     modal
+     * @param     biblioteca
+     * @param     ventana
+    */
     public ActualizarLibro(java.awt.Frame parent, boolean modal, Biblioteca biblioteca, VentanaPrincipal ventana) {
         super(parent, modal);
         initComponents();
@@ -269,6 +286,11 @@ public class ActualizarLibro extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Evento del boton actualizarLibro al hacer click
+     *
+     * @param     evt
+    */
     private void btnActualizarLibroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarLibroMouseClicked
         String nuevoTitulo = this.txtNuevoTitulo.getText();
         try{
@@ -300,7 +322,7 @@ public class ActualizarLibro extends javax.swing.JDialog {
     }//GEN-LAST:event_btnActualizarLibroMouseExited
 
     private void txtNuevoTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNuevoTituloActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_txtNuevoTituloActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

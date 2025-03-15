@@ -10,8 +10,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
- *
+ * Modelo que representa la ventana de actualizar libro
  * @author Camila
+ * @since 20250312
+ * @version 1.0
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
 
@@ -19,8 +21,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      * Creates new form VentanaPrincipal
      */
     
+    //Atributos 
+    /**
+    * Instancia de Biblioteca
+    */
     private Biblioteca biblioteca = new Biblioteca();
-            
+    
+    /**
+     * Inicializa los atributos de la clase VentanaPrincipal
+     *
+     * @param     biblioteca
+    */   
     public VentanaPrincipal(Biblioteca biblioteca) {
         initComponents();
         this.biblioteca = biblioteca;
@@ -404,19 +415,37 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Crea instancia de clase AgregarLibro y la hace visible
+     *
+     * @param     evt
+    */
     private void btnAgregarLibroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarLibroMouseClicked
         AgregarLibro ventanaAgregarLibro = new AgregarLibro (this, true, this.biblioteca, this);
         ventanaAgregarLibro.setVisible(true);
     }//GEN-LAST:event_btnAgregarLibroMouseClicked
 
+    /**
+     * Evento del boton agregarLibro al entrar el mouse
+     * @param     evt
+    */
     private void btnAgregarLibroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarLibroMouseEntered
         this.mouseEntered(btnAgregarLibro);
     }//GEN-LAST:event_btnAgregarLibroMouseEntered
 
+    /**
+     * Evento del boton agregarrLibro al salir el mouse
+     * @param     evt
+    */
     private void btnAgregarLibroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarLibroMouseExited
         this.mouseExited(btnAgregarLibro);
     }//GEN-LAST:event_btnAgregarLibroMouseExited
 
+    /**
+     * Crea instancia de clase ActualizarLibro y la hace visible
+     *
+     * @param     evt
+    */
     private void btnActualizarLibroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarLibroMouseClicked
         if(this.biblioteca.getLibros().size() == 0){
             JOptionPane.showMessageDialog(this, "Debe agregar un libro primero");
@@ -427,14 +456,27 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnActualizarLibroMouseClicked
 
+    /**
+     * Evento del boton actualizarLibro al entrar el mouse
+     * @param     evt
+    */
     private void btnActualizarLibroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarLibroMouseEntered
         this.mouseEntered(btnActualizarLibro);
     }//GEN-LAST:event_btnActualizarLibroMouseEntered
 
+    /**
+     * Evento del boton actualizarLibro al salir el mouse
+     * @param     evt
+    */
     private void btnActualizarLibroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarLibroMouseExited
         this.mouseExited(btnActualizarLibro);
     }//GEN-LAST:event_btnActualizarLibroMouseExited
 
+    /**
+     * Crea instancia de clase EliminarLibro y la hace visible
+     *
+     * @param     evt
+    */
     private void eliminarLibroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminarLibroMouseClicked
         if(this.biblioteca.getLibros().size() == 0){
             JOptionPane.showMessageDialog(this, "Debe agregar un libro primero");
@@ -445,14 +487,27 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_eliminarLibroMouseClicked
 
+    /**
+     * Evento del boton eliminarLibro al entrar el mouse
+     * @param     evt
+    */
     private void eliminarLibroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminarLibroMouseEntered
         this.mouseEntered(eliminarLibro);
     }//GEN-LAST:event_eliminarLibroMouseEntered
 
+    /**
+     * Evento del boton eliminarLibro al salir el mouse
+     * @param     evt
+    */
     private void eliminarLibroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminarLibroMouseExited
         this.mouseExited(eliminarLibro);
     }//GEN-LAST:event_eliminarLibroMouseExited
 
+    /**
+     * Crea instancia de clase BuscarLibro y la hace visible
+     *
+     * @param     evt
+    */
     private void btnBuscarLibroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarLibroMouseClicked
         if(this.biblioteca.getLibros().size() == 0){
             JOptionPane.showMessageDialog(this, "Debe agregar un libro primero");
@@ -463,14 +518,27 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnBuscarLibroMouseClicked
 
+    /**
+     * Evento del boton buscarLibro al entrar el mouse
+     * @param     evt
+    */
     private void btnBuscarLibroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarLibroMouseEntered
         this.mouseEntered(btnBuscarLibro);
     }//GEN-LAST:event_btnBuscarLibroMouseEntered
 
+    /**
+     * Evento del boton buscarLibro al salir el mouse
+     * @param     evt
+    */
     private void btnBuscarLibroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarLibroMouseExited
         this.mouseExited(btnBuscarLibro);
     }//GEN-LAST:event_btnBuscarLibroMouseExited
 
+    /**
+     * Crea instancia de clase MostrarLibros y la hace visible
+     *
+     * @param     evt
+    */
     private void btnMostrarLibrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMostrarLibrosMouseClicked
         if(this.biblioteca.getLibros().size() == 0){
             JOptionPane.showMessageDialog(this, "Debe agregar un libro primero");
@@ -480,14 +548,27 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnMostrarLibrosMouseClicked
 
+    /**
+     * Evento del boton mostrarLibros al entrar el mouse
+     * @param     evt
+    */
     private void btnMostrarLibrosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMostrarLibrosMouseEntered
         this.mouseEntered(btnMostrarLibros);
     }//GEN-LAST:event_btnMostrarLibrosMouseEntered
 
+    /**
+     * Evento del boton mostrarLibros al salir el mouse
+     * @param     evt
+    */
     private void btnMostrarLibrosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMostrarLibrosMouseExited
         this.mouseExited(btnMostrarLibros);
     }//GEN-LAST:event_btnMostrarLibrosMouseExited
     
+    /**
+     * Crea instancia de clase MostrarAlfabeticamente y la hace visible
+     *
+     * @param     evt
+    */
     private void btnMostrarLibrosAlfabeticamenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMostrarLibrosAlfabeticamenteMouseClicked
         if(this.biblioteca.getLibros().size() == 0){
             JOptionPane.showMessageDialog(this, "Debe agregar un libro primero");
@@ -496,19 +577,35 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             ventanaMostrarAlfabeticamente.setVisible (true);
         }
     }//GEN-LAST:event_btnMostrarLibrosAlfabeticamenteMouseClicked
-
+ 
+    /**
+     * Evento del boton mostrarAlfabeticamente al entrar el mouse
+     * @param     evt
+    */
     private void btnMostrarLibrosAlfabeticamenteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMostrarLibrosAlfabeticamenteMouseEntered
-        // TODO add your handling code here:
+       this.mouseEntered(btnMostrarLibrosAlfabeticamente);
     }//GEN-LAST:event_btnMostrarLibrosAlfabeticamenteMouseEntered
 
+    /**
+     * Evento del boton mostrarAlfabeticamente al salir el mouse
+     * @param     evt
+    */
     private void btnMostrarLibrosAlfabeticamenteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMostrarLibrosAlfabeticamenteMouseExited
-        // TODO add your handling code here:
+        this.mouseExited(btnMostrarLibrosAlfabeticamente);
     }//GEN-LAST:event_btnMostrarLibrosAlfabeticamenteMouseExited
 
+    /**
+     * Metodo para cambiar el color del boton
+     * @param     evt
+    */
     private void mouseEntered (JPanel panel){
         panel.setBackground(new Color (207, 240, 255));
     }
 
+    /**
+     * Metodo para cambiar el color del boton
+     * @param     evt
+    */
     private void mouseExited (JPanel panel){
         panel.setBackground(Color.white);
     }

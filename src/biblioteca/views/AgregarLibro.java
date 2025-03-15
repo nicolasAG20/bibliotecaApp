@@ -11,18 +11,30 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
- *
+ * Modelo que representa la ventana de AgregarLibro
  * @author Camila
+ * @since 20250312
+ * @version 1.0
  */
 public class AgregarLibro extends javax.swing.JDialog {
-
+    //Atributos 
     /**
-     * Creates new form AgregarLibro
-     */
-    
+    * Instancia de ventanaPrincipal
+    */
     private VentanaPrincipal ventanaPrincipal;
+    /**
+    * Instancia de Biblioteca
+    */
     private Biblioteca biblioteca;
     
+    /**
+     * Inicializa los atributos de la clase AgregarLibro
+     *
+     * @param     parent
+     * @param     modal
+     * @param     biblioteca
+     * @param     ventanaPrincipal
+    */
     public AgregarLibro(java.awt.Frame parent, boolean modal, Biblioteca biblioteca, VentanaPrincipal ventanaPrincipal) {
         super(parent, modal);
         initComponents();
@@ -232,6 +244,10 @@ public class AgregarLibro extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Evento del boton agregarLibro al hacer click
+     * @param     evt
+    */
     private void btnAgregarLibroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarLibroMouseClicked
         String titulo = this.txtTitulo.getText();
         try{
@@ -248,18 +264,33 @@ public class AgregarLibro extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_btnAgregarLibroMouseClicked
 
+    /**
+     * Evento del boton actualizarLibro al entrar el mouse
+     * @param     evt
+    */
     private void btnAgregarLibroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarLibroMouseEntered
         this.mouseEntered(btnAgregarLibro);
     }//GEN-LAST:event_btnAgregarLibroMouseEntered
-
+    /**
+     * Evento del boton actualizarLibro al salir el mouse
+     * @param     evt
+    */
     private void btnAgregarLibroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarLibroMouseExited
         this.mouseExited(btnAgregarLibro);
     }//GEN-LAST:event_btnAgregarLibroMouseExited
 
+    /**
+     * Metodo para cambiar el color del boton
+     * @param     evt
+    */
     private void mouseEntered (JPanel panel){
         panel.setBackground(new Color (207, 240, 255));
     }
 
+    /**
+     * Metodo para cambiar el color del boton
+     * @param     evt
+    */
     private void mouseExited (JPanel panel){
         panel.setBackground(Color.white);
     }

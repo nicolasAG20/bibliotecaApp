@@ -11,15 +11,34 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
 /**
- *
+ * Modelo que representa la ventana de MostrarAlfacbeticamente
  * @author Camila
+ * @since 20250312
+ * @version 1.0
  */
 public class MostrarAlfabeticamente extends javax.swing.JDialog {
-
+    //Atributos 
+    /**
+    * Instancia de Biblioteca
+    */
     private Biblioteca biblioteca;
+    /**
+    * Instancia de VentanaPrincipal
+    */
     private VentanaPrincipal ventana;
+    /**
+    * Arreglo de libros
+    */
     private ArrayList <Libro> libros;
     
+    /**
+     * Inicializa los atributos de la clase MostrarAlfabeticamente
+     *
+     * @param     parent
+     * @param     modal
+     * @param     biblioteca
+     * @param     ventana
+    */
     public MostrarAlfabeticamente(java.awt.Frame parent, boolean modal, Biblioteca biblioteca, VentanaPrincipal ventana) {
         super(parent, modal);
         initComponents();
@@ -212,6 +231,9 @@ public class MostrarAlfabeticamente extends javax.swing.JDialog {
 
     }//GEN-LAST:event_btnVolverMouseExited
 
+    /**
+     * Inicializa y da los valores de la tabla
+    */
     public void llenarTabla (){
         DefaultTableModel modelDefault  = new DefaultTableModel (new String[]{"Titulo libro", "Id libro"}, this.libros.size());
         this.tablaLibros.setModel (modelDefault);
