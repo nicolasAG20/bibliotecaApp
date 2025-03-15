@@ -23,9 +23,15 @@ public class Biblioteca {
      * Muestra los libros existentes en la bilioteca
      * @return arreglo de libros
     */
-    public ArrayList<Libro> mostrarLibros(){
+    
+    
+    public ArrayList<Libro> getLibros(){
+        return libros;
+    }
+
+    public ArrayList<Libro> mostrarLibros() {
         /*for(int i=0 ; i< this.libros.size() ; i++){
-            System.out.println(this.libros.get(i).getTitulo());
+        System.out.println(this.libros.get(i).getTitulo());
         }*/
         return this.libros;
     }
@@ -58,26 +64,28 @@ public class Biblioteca {
      * @param idBuscar
      * @param libroActualizado
     */
-    public void actualizarLibro(long idBuscar, Libro libroActualizado){
+    public boolean actualizarLibro(long idBuscar, Libro libroActualizado){
         for(int i=0 ; i< this.libros.size() ; i++){
             if(this.libros.get(i).getId() == idBuscar){
                 this.libros.set(i, libroActualizado);
-                break; 
+                return true;
             }
         }
+        return false;
     }
     
     /**
      * Elimina un libro del arreglo
      * @param idBuscar
     */
-    public void eliminarLibro(long idBuscar){
+    public boolean eliminarLibro(long idBuscar){
         for(int i=0 ; i< this.libros.size() ; i++){
             if(this.libros.get(i).getId() == idBuscar){
                 this.libros.remove(i);
-                break; 
+                return true; 
             }
         }
+        return false;
     }
     
     /**
