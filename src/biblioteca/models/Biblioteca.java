@@ -93,16 +93,15 @@ public class Biblioteca {
      * Ordena los libros alfabeticamente
      * @return librosOrdenados
     */
-    public ArrayList<Libro> obtenerLibrosAlfabeticamente(){
-        ArrayList<Libro> librosOrdenados = new ArrayList<Libro>();
-        for(char i= 'a' ; i<'z'; i++){
-            for(int j=0 ; j < this.libros.size() ; j++){
-                if(this.libros.get(i).getTitulo().charAt(0) == i){
-                    librosOrdenados.add(this.libros.get(i));
-                    break; 
+        public ArrayList<Libro> obtenerLibrosAlfabeticamente(){
+            ArrayList<Libro> librosOrdenados = new ArrayList<Libro>();
+            for(char i= 'a' ; i<'z'; i++){
+                for(int j=0 ; j < this.libros.size() ; j++){
+                    if(this.libros.get(j).getTitulo().charAt(0) == i){
+                        librosOrdenados.add(this.libros.get(j));
+                    }
                 }
             }
+            return librosOrdenados;
         }
-        return librosOrdenados;
-    }
 }

@@ -6,8 +6,10 @@ package biblioteca.views;
 
 import biblioteca.models.Biblioteca;
 import biblioteca.models.Libro;
+import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  * Modelo que representa la ventana de BuscarLibro
@@ -63,6 +65,8 @@ public class BuscarLibro extends javax.swing.JDialog {
         btnBuscarLibro = new javax.swing.JPanel();
         txtBusc = new javax.swing.JLabel();
         iconoBusc = new javax.swing.JLabel();
+        btnMostrarLibros = new javax.swing.JPanel();
+        textoMostrarLibros = new javax.swing.JLabel();
         textBuscar1 = new javax.swing.JLabel();
         txtIdLibro = new javax.swing.JLabel();
         txtTituloLibro = new javax.swing.JLabel();
@@ -159,14 +163,53 @@ public class BuscarLibro extends javax.swing.JDialog {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        btnMostrarLibros.setBackground(new java.awt.Color(255, 255, 255));
+        btnMostrarLibros.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMostrarLibrosMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnMostrarLibrosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnMostrarLibrosMouseExited(evt);
+            }
+        });
+
+        textoMostrarLibros.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        textoMostrarLibros.setText("Mostrar libros");
+
+        javax.swing.GroupLayout btnMostrarLibrosLayout = new javax.swing.GroupLayout(btnMostrarLibros);
+        btnMostrarLibros.setLayout(btnMostrarLibrosLayout);
+        btnMostrarLibrosLayout.setHorizontalGroup(
+            btnMostrarLibrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnMostrarLibrosLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(textoMostrarLibros)
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+        btnMostrarLibrosLayout.setVerticalGroup(
+            btnMostrarLibrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnMostrarLibrosLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(textoMostrarLibros)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(textoPreguntarIdLibroBuscar)
-                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(textoPreguntarIdLibroBuscar)
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnMostrarLibros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnBuscarLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtIdLibroBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -180,8 +223,12 @@ public class BuscarLibro extends javax.swing.JDialog {
                     .addComponent(textoPreguntarIdLibroBuscar)
                     .addComponent(txtIdLibroBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnBuscarLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(btnBuscarLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(btnMostrarLibros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         textBuscar1.setFont(new java.awt.Font("Segoe Print", 1, 40)); // NOI18N
@@ -203,7 +250,7 @@ public class BuscarLibro extends javax.swing.JDialog {
             panelContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelContenidoLayout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 6, Short.MAX_VALUE))
             .addGroup(panelContenidoLayout.createSequentialGroup()
                 .addGroup(panelContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelContenidoLayout.createSequentialGroup()
@@ -240,7 +287,7 @@ public class BuscarLibro extends javax.swing.JDialog {
                 .addGroup(panelContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtTituloLibro)
                     .addComponent(iconoLibro2))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
             .addGroup(panelContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelContenidoLayout.createSequentialGroup()
                     .addGap(16, 16, 16)
@@ -312,19 +359,54 @@ public class BuscarLibro extends javax.swing.JDialog {
     }//GEN-LAST:event_btnBuscarLibroMouseClicked
 
     private void btnBuscarLibroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarLibroMouseEntered
-
+        this.mouseEntered(btnBuscarLibro);
     }//GEN-LAST:event_btnBuscarLibroMouseEntered
 
     private void btnBuscarLibroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarLibroMouseExited
-
+        this.mouseExited(btnBuscarLibro);
     }//GEN-LAST:event_btnBuscarLibroMouseExited
 
     private void txtIdLibroBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdLibroBuscarActionPerformed
         
     }//GEN-LAST:event_txtIdLibroBuscarActionPerformed
 
+    private void btnMostrarLibrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMostrarLibrosMouseClicked
+        if(this.biblioteca.getLibros().size() == 0){
+            JOptionPane.showMessageDialog(this, "Debe agregar un libro primero");
+        }else{
+            MostrarLibros ventanaMostrarLibros = new MostrarLibros (this.ventana, true, this.biblioteca, this.ventana);
+            ventanaMostrarLibros.setVisible (true);
+        }
+    }//GEN-LAST:event_btnMostrarLibrosMouseClicked
+
+    private void btnMostrarLibrosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMostrarLibrosMouseEntered
+        this.mouseEntered(btnMostrarLibros);
+    }//GEN-LAST:event_btnMostrarLibrosMouseEntered
+
+    private void btnMostrarLibrosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMostrarLibrosMouseExited
+        this.mouseExited(btnMostrarLibros);
+    }//GEN-LAST:event_btnMostrarLibrosMouseExited
+
+    
+    /**
+     * Metodo para cambiar el color del boton
+     * @param     evt
+    */
+    private void mouseEntered (JPanel panel){
+        panel.setBackground(new Color (207, 240, 255));
+    }
+
+    /**
+     * Metodo para cambiar el color del boton
+     * @param     evt
+    */
+    private void mouseExited (JPanel panel){
+        panel.setBackground(Color.white);
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btnBuscarLibro;
+    private javax.swing.JPanel btnMostrarLibros;
     private javax.swing.JLabel iconoBusc;
     private javax.swing.JLabel iconoBuscarLibro;
     private javax.swing.JLabel iconoLibro;
@@ -335,6 +417,7 @@ public class BuscarLibro extends javax.swing.JDialog {
     private javax.swing.JPanel panelTitulo1;
     private javax.swing.JLabel textBuscar1;
     private javax.swing.JLabel textoBuscarLibro;
+    private javax.swing.JLabel textoMostrarLibros;
     private javax.swing.JLabel textoPreguntarIdLibroBuscar;
     private javax.swing.JLabel txtBusc;
     private javax.swing.JLabel txtIdLibro;

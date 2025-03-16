@@ -27,9 +27,9 @@ public class MostrarAlfabeticamente extends javax.swing.JDialog {
     */
     private VentanaPrincipal ventana;
     /**
-    * Arreglo de libros
+    * Arreglo de librosOrdenados
     */
-    private ArrayList <Libro> libros;
+    private ArrayList <Libro> librosOrdenados;
     
     /**
      * Inicializa los atributos de la clase MostrarAlfabeticamente
@@ -44,7 +44,7 @@ public class MostrarAlfabeticamente extends javax.swing.JDialog {
         initComponents();
         this.ventana = ventana;
         this.biblioteca = biblioteca;
-        this.libros = this.biblioteca.obtenerLibrosAlfabeticamente();
+        this.librosOrdenados = this.biblioteca.obtenerLibrosAlfabeticamente();
         this.llenarTabla();
         this.setLocationRelativeTo(null);
     }
@@ -235,12 +235,12 @@ public class MostrarAlfabeticamente extends javax.swing.JDialog {
      * Inicializa y da los valores de la tabla
     */
     public void llenarTabla (){
-        DefaultTableModel modelDefault  = new DefaultTableModel (new String[]{"Titulo libro", "Id libro"}, this.libros.size());
+        DefaultTableModel modelDefault  = new DefaultTableModel (new String[]{"Titulo libro", "Id libro"}, this.librosOrdenados.size());
         this.tablaLibros.setModel (modelDefault);
         
         TableModel dataModel = tablaLibros.getModel();
-        for(int i = 0; i < this.libros.size(); i++){
-            Libro libro = this.libros.get(i);
+        for(int i = 0; i < this.librosOrdenados.size(); i++){
+            Libro libro = this.librosOrdenados.get(i);
             
             dataModel.setValueAt (libro.getTitulo(), i, 0);
             dataModel.setValueAt (libro.getId(), i, 1);

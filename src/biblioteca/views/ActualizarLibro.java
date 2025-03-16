@@ -6,7 +6,9 @@ package biblioteca.views;
 
 import biblioteca.models.Biblioteca;
 import biblioteca.models.Libro;
+import java.awt.Color;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  * Modelo que representa la ventana de actualizar libro
@@ -24,6 +26,7 @@ public class ActualizarLibro extends javax.swing.JDialog {
     /**
     * Instancia de VentanaPrincipal
     */
+    private MostrarLibros ventanaMostrar; 
     private VentanaPrincipal ventana;
     
     /**
@@ -40,6 +43,8 @@ public class ActualizarLibro extends javax.swing.JDialog {
         this.biblioteca = biblioteca;
         this.ventana = ventana;
         this.setLocationRelativeTo(null);
+        
+        
     }
 
     /**
@@ -68,6 +73,8 @@ public class ActualizarLibro extends javax.swing.JDialog {
         txtNuevoId = new javax.swing.JTextField();
         textoNuevoTitulo = new javax.swing.JLabel();
         txtNuevoTitulo = new javax.swing.JTextField();
+        btnMostrarLibros = new javax.swing.JPanel();
+        textoMostrarLibros = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -87,7 +94,7 @@ public class ActualizarLibro extends javax.swing.JDialog {
             panelTitulo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelTitulo1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(textoActualizarLibro, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+                .addComponent(textoActualizarLibro, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(iconoActualizarLibro)
                 .addGap(48, 48, 48))
@@ -129,19 +136,20 @@ public class ActualizarLibro extends javax.swing.JDialog {
             .addGroup(btnActualizarLibroLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtActu)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addComponent(iconoActua)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addGap(5, 5, 5))
         );
         btnActualizarLibroLayout.setVerticalGroup(
             btnActualizarLibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnActualizarLibroLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(iconoActua, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
             .addGroup(btnActualizarLibroLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(txtActu)
+                .addGroup(btnActualizarLibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(btnActualizarLibroLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(txtActu))
+                    .addGroup(btnActualizarLibroLayout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(iconoActua, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -217,6 +225,39 @@ public class ActualizarLibro extends javax.swing.JDialog {
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
+        btnMostrarLibros.setBackground(new java.awt.Color(255, 255, 255));
+        btnMostrarLibros.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMostrarLibrosMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnMostrarLibrosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnMostrarLibrosMouseExited(evt);
+            }
+        });
+
+        textoMostrarLibros.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        textoMostrarLibros.setText("Mostrar libros");
+
+        javax.swing.GroupLayout btnMostrarLibrosLayout = new javax.swing.GroupLayout(btnMostrarLibros);
+        btnMostrarLibros.setLayout(btnMostrarLibrosLayout);
+        btnMostrarLibrosLayout.setHorizontalGroup(
+            btnMostrarLibrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnMostrarLibrosLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(textoMostrarLibros)
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+        btnMostrarLibrosLayout.setVerticalGroup(
+            btnMostrarLibrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnMostrarLibrosLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(textoMostrarLibros)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout panelContenidoLayout = new javax.swing.GroupLayout(panelContenido);
         panelContenido.setLayout(panelContenidoLayout);
         panelContenidoLayout.setHorizontalGroup(
@@ -228,6 +269,8 @@ public class ActualizarLibro extends javax.swing.JDialog {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelContenidoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnMostrarLibros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
                 .addComponent(btnActualizarLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -241,24 +284,23 @@ public class ActualizarLibro extends javax.swing.JDialog {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnActualizarLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addGroup(panelContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnActualizarLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMostrarLibros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(34, 34, 34))
         );
 
         javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
         panelPrincipal.setLayout(panelPrincipalLayout);
         panelPrincipalLayout.setHorizontalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelPrincipalLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addComponent(panelTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addComponent(panelContenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())))
+                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(panelTitulo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelContenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         panelPrincipalLayout.setVerticalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,7 +309,7 @@ public class ActualizarLibro extends javax.swing.JDialog {
                 .addComponent(panelTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelContenido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -314,19 +356,53 @@ public class ActualizarLibro extends javax.swing.JDialog {
     }//GEN-LAST:event_btnActualizarLibroMouseClicked
 
     private void btnActualizarLibroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarLibroMouseEntered
-
+        this.mouseEntered(btnActualizarLibro);
     }//GEN-LAST:event_btnActualizarLibroMouseEntered
-
+        
     private void btnActualizarLibroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarLibroMouseExited
-
+        this.mouseExited(btnActualizarLibro);
     }//GEN-LAST:event_btnActualizarLibroMouseExited
 
     private void txtNuevoTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNuevoTituloActionPerformed
        
     }//GEN-LAST:event_txtNuevoTituloActionPerformed
 
+    private void btnMostrarLibrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMostrarLibrosMouseClicked
+        if(this.biblioteca.getLibros().size() == 0){
+            JOptionPane.showMessageDialog(this, "Debe agregar un libro primero");
+        }else{
+            MostrarLibros ventanaMostrarLibros = new MostrarLibros (this.ventana, true, this.biblioteca, this.ventana);
+            ventanaMostrarLibros.setVisible (true);
+        }
+    }//GEN-LAST:event_btnMostrarLibrosMouseClicked
+
+    private void btnMostrarLibrosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMostrarLibrosMouseEntered
+        this.mouseEntered(btnMostrarLibros);
+    }//GEN-LAST:event_btnMostrarLibrosMouseEntered
+
+    private void btnMostrarLibrosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMostrarLibrosMouseExited
+        this.mouseExited(btnMostrarLibros);
+    }//GEN-LAST:event_btnMostrarLibrosMouseExited
+
+    /**
+     * Metodo para cambiar el color del boton
+     * @param     evt
+    */
+    private void mouseEntered (JPanel panel){
+        panel.setBackground(new Color (207, 240, 255));
+    }
+
+    /**
+     * Metodo para cambiar el color del boton
+     * @param     evt
+    */
+    private void mouseExited (JPanel panel){
+        panel.setBackground(Color.white);
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btnActualizarLibro;
+    private javax.swing.JPanel btnMostrarLibros;
     private javax.swing.JLabel iconoActua;
     private javax.swing.JLabel iconoActualizarLibro;
     private javax.swing.JPanel jPanel1;
@@ -335,6 +411,7 @@ public class ActualizarLibro extends javax.swing.JDialog {
     private javax.swing.JPanel panelPrincipal;
     private javax.swing.JPanel panelTitulo1;
     private javax.swing.JLabel textoActualizarLibro;
+    private javax.swing.JLabel textoMostrarLibros;
     private javax.swing.JLabel textoNuevoId;
     private javax.swing.JLabel textoNuevoTitulo;
     private javax.swing.JLabel textoPreguntarIdLibroActualizar1;

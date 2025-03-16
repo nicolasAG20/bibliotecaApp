@@ -5,7 +5,9 @@
 package biblioteca.views;
 
 import biblioteca.models.Biblioteca;
+import java.awt.Color;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  * Modelo que representa la ventana de EliminarLibro
@@ -53,6 +55,8 @@ public class EliminarLibro extends javax.swing.JDialog {
         jPanel3 = new javax.swing.JPanel();
         textoPreguntarIdLibroEliminar = new javax.swing.JLabel();
         txtIdLibroEliminar = new javax.swing.JTextField();
+        btnMostrarLibros = new javax.swing.JPanel();
+        textoMostrarLibros = new javax.swing.JLabel();
         panelTitulo1 = new javax.swing.JPanel();
         textoEliminar = new javax.swing.JLabel();
         iconoEliminar = new javax.swing.JLabel();
@@ -88,19 +92,20 @@ public class EliminarLibro extends javax.swing.JDialog {
             .addGroup(btnEliminarLibroLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtElimi)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(iconoElimi)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addGap(8, 8, 8))
         );
         btnEliminarLibroLayout.setVerticalGroup(
             btnEliminarLibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnEliminarLibroLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(iconoElimi, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
             .addGroup(btnEliminarLibroLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(txtElimi)
+                .addGroup(btnEliminarLibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(btnEliminarLibroLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(txtElimi))
+                    .addGroup(btnEliminarLibroLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(iconoElimi, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -133,6 +138,39 @@ public class EliminarLibro extends javax.swing.JDialog {
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
+        btnMostrarLibros.setBackground(new java.awt.Color(255, 255, 255));
+        btnMostrarLibros.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMostrarLibrosMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnMostrarLibrosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnMostrarLibrosMouseExited(evt);
+            }
+        });
+
+        textoMostrarLibros.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        textoMostrarLibros.setText("Mostrar libros");
+
+        javax.swing.GroupLayout btnMostrarLibrosLayout = new javax.swing.GroupLayout(btnMostrarLibros);
+        btnMostrarLibros.setLayout(btnMostrarLibrosLayout);
+        btnMostrarLibrosLayout.setHorizontalGroup(
+            btnMostrarLibrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnMostrarLibrosLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(textoMostrarLibros)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+        btnMostrarLibrosLayout.setVerticalGroup(
+            btnMostrarLibrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnMostrarLibrosLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(textoMostrarLibros)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout panelContenidoLayout = new javax.swing.GroupLayout(panelContenido);
         panelContenido.setLayout(panelContenidoLayout);
         panelContenidoLayout.setHorizontalGroup(
@@ -144,6 +182,8 @@ public class EliminarLibro extends javax.swing.JDialog {
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelContenidoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnMostrarLibros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
                 .addComponent(btnEliminarLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
         );
@@ -155,7 +195,9 @@ public class EliminarLibro extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnEliminarLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(panelContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnEliminarLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMostrarLibros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
@@ -247,16 +289,48 @@ public class EliminarLibro extends javax.swing.JDialog {
     }//GEN-LAST:event_btnEliminarLibroMouseClicked
 
     private void btnEliminarLibroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminarLibroMouseEntered
-
+        this.mouseEntered(btnEliminarLibro);
     }//GEN-LAST:event_btnEliminarLibroMouseEntered
 
     private void btnEliminarLibroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminarLibroMouseExited
-
+        this.mouseExited(btnEliminarLibro);
     }//GEN-LAST:event_btnEliminarLibroMouseExited
 
+    private void btnMostrarLibrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMostrarLibrosMouseClicked
+        if(this.biblioteca.getLibros().size() == 0){
+            JOptionPane.showMessageDialog(this, "Debe agregar un libro primero");
+        }else{
+            MostrarLibros ventanaMostrarLibros = new MostrarLibros (this.ventana, true, this.biblioteca, this.ventana);
+            ventanaMostrarLibros.setVisible (true);
+        }
+    }//GEN-LAST:event_btnMostrarLibrosMouseClicked
 
+    private void btnMostrarLibrosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMostrarLibrosMouseEntered
+        this.mouseEntered(btnMostrarLibros);
+    }//GEN-LAST:event_btnMostrarLibrosMouseEntered
+
+    private void btnMostrarLibrosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMostrarLibrosMouseExited
+        this.mouseExited(btnMostrarLibros);
+    }//GEN-LAST:event_btnMostrarLibrosMouseExited
+
+    /**
+     * Metodo para cambiar el color del boton
+     * @param     evt
+    */
+    private void mouseEntered (JPanel panel){
+        panel.setBackground(new Color (207, 240, 255));
+    }
+
+    /**
+     * Metodo para cambiar el color del boton
+     * @param     evt
+    */
+    private void mouseExited (JPanel panel){
+        panel.setBackground(Color.white);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btnEliminarLibro;
+    private javax.swing.JPanel btnMostrarLibros;
     private javax.swing.JLabel iconoElimi;
     private javax.swing.JLabel iconoEliminar;
     private javax.swing.JPanel jPanel3;
@@ -264,6 +338,7 @@ public class EliminarLibro extends javax.swing.JDialog {
     private javax.swing.JPanel panelPrincipal;
     private javax.swing.JPanel panelTitulo1;
     private javax.swing.JLabel textoEliminar;
+    private javax.swing.JLabel textoMostrarLibros;
     private javax.swing.JLabel textoPreguntarIdLibroEliminar;
     private javax.swing.JLabel txtElimi;
     private javax.swing.JLabel txtEliminar;

@@ -218,7 +218,7 @@ public class AgregarLibro extends javax.swing.JDialog {
                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(panelTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panelContenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         panelPrincipalLayout.setVerticalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,8 +226,8 @@ public class AgregarLibro extends javax.swing.JDialog {
                 .addContainerGap()
                 .addComponent(panelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(panelContenido, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67))
+                .addComponent(panelContenido, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -238,7 +238,7 @@ public class AgregarLibro extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -252,6 +252,14 @@ public class AgregarLibro extends javax.swing.JDialog {
         String titulo = this.txtTitulo.getText();
         try{
             long idLibro = Long.parseLong(this.txtIdLibro.getText());
+            for(int i=0; i<this.biblioteca.getLibros().size(); i++){
+                if( idLibro == this.biblioteca.getLibros().get(i).getId()){
+                    JOptionPane.showMessageDialog(this, "Por favor ingrese un ID no existente");
+                    this.txtIdLibro.setText("");
+                    return; 
+                }
+            }
+            
             Libro libroNuevo = new Libro (idLibro, titulo);
             this.biblioteca.agregarLibro(libroNuevo);
             JOptionPane.showMessageDialog(this, "Libro agregado con exito");

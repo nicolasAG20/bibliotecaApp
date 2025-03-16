@@ -281,20 +281,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGroup(btnMostrarLibrosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(textoMostrarLibros)
-                .addGap(18, 18, 18)
-                .addComponent(iconoVerLibros, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addComponent(iconoVerLibros)
+                .addContainerGap())
         );
         btnMostrarLibrosLayout.setVerticalGroup(
             btnMostrarLibrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnMostrarLibrosLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(btnMostrarLibrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(iconoVerLibros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(btnMostrarLibrosLayout.createSequentialGroup()
-                        .addComponent(textoMostrarLibros)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addComponent(textoMostrarLibros)
+                .addContainerGap(7, Short.MAX_VALUE))
+            .addComponent(iconoVerLibros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         btnMostrarLibrosAlfabeticamente.setBackground(new java.awt.Color(255, 255, 255));
@@ -322,20 +319,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGroup(btnMostrarLibrosAlfabeticamenteLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(textoMostrarLibros1)
-                .addGap(18, 18, 18)
-                .addComponent(iconoVerLibros1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17))
+                .addGap(25, 25, 25)
+                .addComponent(iconoVerLibros1)
+                .addGap(21, 21, 21))
         );
         btnMostrarLibrosAlfabeticamenteLayout.setVerticalGroup(
             btnMostrarLibrosAlfabeticamenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnMostrarLibrosAlfabeticamenteLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(btnMostrarLibrosAlfabeticamenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(iconoVerLibros1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(btnMostrarLibrosAlfabeticamenteLayout.createSequentialGroup()
-                        .addComponent(textoMostrarLibros1)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addComponent(textoMostrarLibros1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(btnMostrarLibrosAlfabeticamenteLayout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addComponent(iconoVerLibros1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout panelContenidoLayout = new javax.swing.GroupLayout(panelContenido);
@@ -357,7 +354,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addGap(28, 28, 28)
                         .addComponent(btnBuscarLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(textoBienvenidos)
-                    .addComponent(btnMostrarLibrosAlfabeticamente, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnMostrarLibrosAlfabeticamente, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(60, Short.MAX_VALUE))
         );
         panelContenidoLayout.setVerticalGroup(
@@ -372,9 +369,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(eliminarLibro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnAgregarLibro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(65, 65, 65)
-                .addComponent(btnMostrarLibros, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnMostrarLibros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnMostrarLibrosAlfabeticamente, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnMostrarLibrosAlfabeticamente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
