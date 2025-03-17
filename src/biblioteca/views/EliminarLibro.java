@@ -81,7 +81,7 @@ public class EliminarLibro extends javax.swing.JDialog {
         });
 
         txtElimi.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        txtElimi.setText("Eliminar consumo");
+        txtElimi.setText("Eliminar Libro");
 
         iconoElimi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblioteca/images/completado.png"))); // NOI18N
 
