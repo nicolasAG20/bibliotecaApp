@@ -17,7 +17,24 @@ public class Libro {
     * Titulo del libro
     */
     String titulo;
+    /**
+    * Autor del libro
+    */
+    Autor autor;
 
+    /**
+     * Inicializa los atributos de la clase Libro
+     *
+     * @param     id    
+     * @param     titulo
+     * @param     autor
+    */
+    public Libro(Long id, String titulo, Autor autor) {
+        this.id = id;
+        this.titulo = titulo;
+        this.autor = autor;
+    }
+    
     /**
      * Inicializa los atributos de la clase Libro
      *
@@ -31,7 +48,6 @@ public class Libro {
     
     /**
      * Retorna el id del libro
-     * @param     id
      * @return    id del libro
     */
     public Long getId() {
@@ -48,7 +64,6 @@ public class Libro {
     
     /**
      * Retorna el titulo del libro
-     * @param     titulo
      * @return    titulo del libro
     */
     public String getTitulo() {
@@ -61,5 +76,21 @@ public class Libro {
     */
     public void setTitulo(String titulo) {
         this.titulo = titulo;
+    }
+    
+    /**
+     * Retorna el autor del libro
+     * @return    titulo del libro
+    */
+    public Autor getAutor() {
+        return autor;
+    }
+
+    /**
+     * Modificar el autor del libro
+     * @param     autor
+    */
+    public void setAutor(Autor autor) {
+        this.autor = autor;
     }
 }

@@ -39,4 +39,13 @@ public abstract class Persona {
         this.documentoDeIdentidad = documentoDeIdentidad;
         this.correoElectronico = correoElectronico;
     }
+    
+    /**
+     * Inicializa los atributos de la clase Persona
+     *
+     * @param     nombre    
+    */
+    public Persona (String nombre){
+        this.nombre = nombre;
+    }
 }

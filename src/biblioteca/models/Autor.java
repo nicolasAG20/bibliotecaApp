@@ -37,8 +37,18 @@ public class Autor extends Persona {
     }
     
     /**
-     * Retorna la editorial del autor
+     * Inicializa los atributos de la clase Autor
+     *
+     * @param     nombre    
      * @param     editorial
+    */
+    public Autor (String nombre, String editorial){
+        super (nombre);
+        this.editorial = editorial;
+    }
+    
+    /**
+     * Retorna la editorial del autor
      * @return    editorial del autor
     */
     public String getEditorial() {
@@ -55,7 +65,6 @@ public class Autor extends Persona {
     
     /**
      * Retorna la profesion del autor
-     * @param     profesion
      * @return    profesion del autor
     */
     public String getProfesion() {
