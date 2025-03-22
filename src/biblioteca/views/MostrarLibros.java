@@ -4,9 +4,12 @@
  */
 package biblioteca.views;
 
+import biblioteca.models.Autor;
 import biblioteca.models.Biblioteca;
 import biblioteca.models.Libro;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
@@ -245,15 +248,19 @@ public class MostrarLibros extends javax.swing.JDialog {
      * Inicializa y da los valores de la tabla
     */
     public void llenarTabla (){
+        
         DefaultTableModel modelDefault  = new DefaultTableModel (new String[]{"Titulo libro", "Id libro", "Nombre autor", "Editorial"}, this.libros.size());
         this.tablaLibros.setModel (modelDefault);
         
         TableModel dataModel = tablaLibros.getModel();
         for(int i = 0; i < this.libros.size(); i++){
+            Autor autor = this.libros.get(i).getAutor();
             Libro libro = this.libros.get(i);
             
             dataModel.setValueAt (libro.getTitulo(), i, 0);
             dataModel.setValueAt (libro.getId(), i, 1);
+            dataModel.setValueAt (autor.getNombre() , i ,2 );
+            dataModel.setValueAt(autor.getEditorial(), i, 3);
         }
     }
     

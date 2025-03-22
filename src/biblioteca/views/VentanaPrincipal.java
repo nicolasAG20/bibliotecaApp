@@ -477,7 +477,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void eliminarLibroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminarLibroMouseClicked
         if(this.biblioteca.getLibros().size() == 0){
             JOptionPane.showMessageDialog(this, "Debe agregar un libro primero");
-        }
+        }   
         else{
             EliminarLibro ventanaEliminarLibro = new EliminarLibro (this, true, this.biblioteca, this);
             ventanaEliminarLibro.setVisible (true);
